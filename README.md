@@ -1,86 +1,71 @@
-# Diabetes Prediction Using SVM
+Diabetes Prediction Using SVM
 
-This project implements a machine learning model to predict whether a person is diabetic based on medical diagnostic measurements. The model uses a Support Vector Machine (SVM) with a linear kernel for classification. 
+This project demonstrates the use of a Support Vector Machine (SVM) model to predict whether a person is diabetic based on a set of medical attributes.
 
-## Table of Contents
-- [Dataset](#dataset)
-- [Requirements](#requirements)
-- [Implementation](#implementation)
-- [Usage](#usage)
-- [Results](#results)
-- [Acknowledgements](#acknowledgements)
+Dataset
 
----
+The dataset used for this project is diabetes.csv. It contains the following columns:
 
-## Dataset
-The project uses the **Pima Indians Diabetes Dataset**, which consists of diagnostic features and a binary outcome:
-- Features include attributes like glucose level, blood pressure, and BMI.
-- The target variable (`Outcome`) indicates whether the person is diabetic (1) or not (0).
+Pregnancies: Number of times pregnant
 
-### Dataset Fields
-1. Pregnancies
-2. Glucose
-3. Blood Pressure
-4. Skin Thickness
-5. Insulin
-6. BMI
-7. Diabetes Pedigree Function
-8. Age
-9. Outcome (0 or 1)
+Glucose: Plasma glucose concentration
 
----
+BloodPressure: Diastolic blood pressure (mm Hg)
 
-## Requirements
-The following Python libraries are required:
-- numpy
-- pandas
-- scikit-learn
+SkinThickness: Triceps skinfold thickness (mm)
 
-You can install them with:
-```bash
-pip install numpy pandas scikit-learn
+Insulin: 2-Hour serum insulin (mu U/ml)
 
-Implementation
-Data Preprocessing:
+BMI: Body mass index (weight in kg/(height in m)^2)
 
-Load the dataset and examine its structure.
-Standardize the feature columns using StandardScaler to improve model performance.
-Splitting the Dataset:
+DiabetesPedigreeFunction: A function which scores likelihood of diabetes based on family history
 
-Split the data into training and testing sets using an 80-20 split, with stratification to maintain class distribution.
-Model Training:
+Age: Age in years
 
-Train an SVM classifier with a linear kernel on the training data.
-Evaluation:
+Outcome: Class variable (0 if non-diabetic, 1 if diabetic)
 
-Evaluate the model using accuracy scores for both training and testing datasets.
-Prediction:
+Prerequisites
 
-Accept input from the user for medical measurements.
-Standardize the input, and predict whether the individual is diabetic or not.
-Usage
-Clone or download this repository.
-Place the diabetes.csv dataset in the working directory.
-Run the Python script to train the model and make predictions:
-bash
-Copy
-Edit
-python diabetes_prediction.py
-Enter sample input values to test the model:
-python
-Copy
-Edit
-inp = (10, 168, 74, 0, 0, 38, 0.537, 34)
-The model will output whether the person is diabetic or not.
+Make sure you have the following Python libraries installed:
+
+numpy
+
+pandas
+
+scikit-learn
+
+Project Workflow
+
+Step 1: Data Analysis and Preprocessing
+
+Load the dataset and explore its structure using head, shape, and describe functions.
+
+Check class distribution and calculate mean values for each class.
+
+Separate features (X) and target variable (Y).
+
+Standardize the features using StandardScaler.
+
+Split the dataset into training and testing sets using train_test_split.
+
+Step 2: Model Training and Evaluation
+
+Train a Support Vector Machine (SVM) model with a linear kernel.
+
+Evaluate the model's accuracy on both training and testing datasets using accuracy_score.
+
+Step 3: Making Predictions
+
+Use the trained model to classify new input data points as diabetic or non-diabetic.
+
 Results
-Training Accuracy: Achieved after evaluating on the training set.
-Testing Accuracy: Displayed after evaluating on the test set.
-Sample Output:
-plaintext
-Copy
-Edit
-The person is diabetic
-Acknowledgements
-The dataset is originally from the National Institute of Diabetes and Digestive and Kidney Diseases.
-Thanks to the scikit-learn library for machine learning tools.
-For additional context and explanation, refer to [this video](https://youtu.be/xUE7SjVx9bQ?si=5QyxnN2OoV52kmk5) by Siddhardhan.
+
+Training accuracy: Achieved using the SVM model on the training dataset.
+
+Testing accuracy: Evaluated using the test dataset.
+
+Predictions: The model can classify new data points as diabetic or non-diabetic.
+
+Acknowledgement
+
+This project is inspired by open-source contributions and datasets related to diabetes prediction. Special thanks to the creators of the dataset and the Python community for providing the necessary tools and libraries. For additional context and explanation, refer to this video by Siddhardhan.
